@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const print = (data) => {
+            console.log(data)
+        }
+    </script>
+    <button id="btn1">0</button>
+    <script>
+        let A = 0
+        let button = document.querySelector("#btn1")
+        button.addEventListener("mouseenter", ()=>{
+            A++
+            button.innerHTML = A
+        })
+    </script>
+
+    <h1 id="a1">0</h1>
+    <script>
+        let B = 0
+        let cnt = document.querySelector("#a1")
+        cnt.addEventListener("mouseover", () =>{
+            B += 2
+            cnt.innerHTML = B
+        })
+    </script>
+    <div class="area1">Here</div>
+    <script>
+        let area = document.querySelector(".area1")
+        area.addEventListener('mousemove', (e) => {
+            console.log(`offest(${e.offsetX}, ${e.offsetY}), page(${e.pageX}, ${e.pageY})`) 
+        })
+    </script>
+
+    <input type="text" class="clk"/>
+    <div id="A1" style="background-color: #000; padding: 20px;">찾으면 바보</div>
+    <a id="aa">0</a>
+    <script>
+        let MM = '#'
+        let num  = 0
+        let textarea = document.querySelector(".clk")
+        textarea.addEventListener("keydown", (e) => {
+            console.log(`key "${e.key}" down`); 
+            if (e.key == "ArrowRight"){
+                num += 1
+                if (num >= 222){
+                    num %= 222
+                }
+                let M = document.querySelector("#A1")
+                M.style.backgroundColor = MM+num.toString()
+                let N = document.querySelector("#aa")
+                N.innerHTML = MM+num.toString()
+            }
+        });
+        
+    </script>
+</body>
+
+</html>

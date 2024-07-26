@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       function User(name, no){
+        this.name = name
+        this.no = no
+
+        let result = 0
+        for (let i = 1; i<=no;i++){
+            result += i
+        }
+        this.result = result
+       } 
+       let user = new User('문진혁', 100)
+       console.log(user)
+    </script>
+</body>
+</html>

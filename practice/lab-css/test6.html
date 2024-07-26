@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            padding: 15px;
+            color: black;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        #container1 .box {
+            border: 1px solid;
+        }
+
+        #container1 {
+            width: 700px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 100px);
+
+        }
+        
+        #container1 .box1 {
+            background-color: red;
+            grid-column: 1/4;
+        }
+
+        #container1 .box2 {
+            background-color: blue;
+            grid-row: 2/4;
+            grid-column-start: 1;
+        }
+
+        #container1 .box3 {
+            background-color: green;
+            grid-column-start: 2;
+            grid-column-end: 4;
+            grid-row-start: 2;
+        }
+
+        #container1 .box4 {
+            background-color: aqua;
+            grid-column-start: 3;
+            grid-row-start: 3;
+        }
+
+        #container2 {
+            width: 700px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 100px);
+            grid-template-areas: 
+                "box1 box1 box1"
+                "box2 box3 box3"
+                "box2 . box4";
+
+        }
+        
+        #container2 .box1 {
+            background-color: red;
+            grid-area: box1;
+        }
+
+        #container2 .box2 {
+            background-color: blue;
+            grid-area: box2;
+        }
+
+        #container2 .box3 {
+            background-color: green;
+            grid-area: box3;
+        }
+
+        #container2 .box4 {
+            background-color: aqua;
+            grid-area: box4;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container1">
+        <div class="box box1">box1</div>
+        <div class="box box2">box2</div>
+        <div class="box box3">box3</div>
+        <div class="box box4">box4</div>
+        <div class="box box5">box5</div>
+    </div>
+    <br>
+    <div id="container2">
+        <div class="box box1">box1</div>
+        <div class="box box2">box2</div>
+        <div class="box box3">box3</div>
+        <div class="box box4">box4</div>
+        <div class="box box5">box5</div>
+    </div>
+</body>
+
+</html>

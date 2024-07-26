@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const print = (data) => {
+            console.log(data)
+        }
+        const arr = (...arg) =>{
+            return [arg]
+        }
+    </script>
+</head>
+
+<body>
+    <form id="form" action="addUser">
+        <input type="text" id="input1" />
+        <select id="select1">
+            <option>1번</option>
+            <option>2번</option>
+        </select>
+        <button type="submit">submit</button>
+        <button type="reset">reset</button>
+    </form>
+    <script>
+        let form = document.getElementById('form')
+        form.addEventListener('submit', (e) => {
+            e.preventDefault()
+            alert("submit click")
+        })
+        form.addEventListener("reset", (e) => {
+            e.preventDefault()
+            alert("reset click")
+        }) // 물어보자 이건 의미없는거 아닌가? prevent해버리면 reset이 안되는데
+
+        let input1 = document.getElementById("input1")
+        input1.addEventListener('focus', (e) => {
+            e.target.style.backgroundColor = 'pink'
+        })
+        input1.addEventListener('blur', (e) => {
+            e.target.style.backgroundColor = ''
+        })
+
+        let select1 = document.getElementById("select1")
+        select1.addEventListener('change', (e) => {
+            alert(`option : ${e.target.value}`)
+        })
+        let ASD = new Array(1, 2, 3, 4)
+        print(ASD)
+    </script>
+</body>
+
+</html>

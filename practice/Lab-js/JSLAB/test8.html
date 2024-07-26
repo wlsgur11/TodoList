@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let obj1 = {
+            name: '바보',
+            age: 20
+        }
+        console.log(obj1)
+
+        let obj2 = Object.create(Object.prototype, {
+            name: { value: '바보' },
+            age: { value: 20 }
+        })
+        console.log(obj2)
+
+        function Shape(name) {
+            this.name = name
+        }
+        Shape.prototype.draw = function () {
+            console.log(`${this.name}의 그림을 그립니다.`)
+        }
+
+        let rect = Object.create(Shape.prototype, {
+            name: { value: '사각형' },
+            width: { value: 10 }
+        })
+        rect.draw()
+
+        let triangle = Object.create(Shape.prototype, {
+            name: { value: '사각형' },
+            width: { value: 10 }
+        })
+        triangle.draw()
+
+        let sayHello = function (arg1, arg2) {
+            console.log(`Hello, ${this.name}, ${arg1}, ${arg2}`)
+        }
+        sayHello.call({ name: '바보' }, 10, 20)
+        sayHello.apply({ name: '엉덩이' }, [20, 30]) // 객체의 동적지정
+
+        let obj3 = {
+            _num: 0,
+            get num() {
+                return this._num
+            },
+            set num(value) {
+                this._num = value
+            }
+        }
+        obj3.num = 40
+        console.log(obj3.num)
+    </script>
+</body>
+
+</html>

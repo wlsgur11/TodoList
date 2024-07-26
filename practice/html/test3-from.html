@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="addUser">
+        first name: <input type="text" id="fname" name="fname"/>
+        <br>
+        last name: <input type="text" id="lname" name="lname"/>
+        <br>
+        <input type="submit" value="가입"/>
+    </form>
+    <br>
+    <form action="addUser" method="post">
+        first name: <input type="text" id="fname" name="fname"/>
+        <br>
+        last name: <input type="text" id="lname" name="lname"/>
+        <br>
+        <input type="submit" value="가입"/>
+    </form>
+    <br>
+    <form>
+        <label for="phone">phone</label>
+        <input type="phone" name="phone" id="phone"
+        pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}" title="전화번호 타입 맞춰라"
+        placeholder="000-0000-0000"/>
+        <br>
+        <input type="submit" value="가입"/>
+    </form>
+    <br>
+    <form action="add">
+        <input type="checkbox" name="a1">bike</br>
+        <input type="checkbox" name="a2">car</br>
+        <input type="checkbox" name="a3">board</br>
+        <input type="submit" value="가입"/>
+    </form>
+    <br>
+    <form action="add">
+        <input type="checkbox" name="a1" value="10">bike</br>
+        <input type="checkbox" name="a2" value="20">car</br>
+        <input type="checkbox" name="a3" value="30">board</br>
+        <input type="submit" value="가입"/>
+    </form>
+</body>
+</html>
